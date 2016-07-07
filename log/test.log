@@ -141,3 +141,31 @@ Processing by SessionsController#new as HTML
   Rendered sessions/new.html.erb within layouts/application (1.2ms)
 Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+--------------------------------
+AddANewBookTest: test_Add_A_Book
+--------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:00:43 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fbf11635a88@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 36ms (ActiveRecord: 2.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:00:43 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 835ms (Views: 833.4ms | ActiveRecord: 0.1ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:00:43 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fbf11635a88@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:00:43 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

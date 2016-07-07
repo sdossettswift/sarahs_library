@@ -765,3 +765,53 @@ Processing by BooksController#new as HTML
   Rendered books/_form.html.erb (4.3ms)
   Rendered books/new.html.erb within layouts/application (5.6ms)
 Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-07-07 14:16:34 -0500
+Processing by AuthorsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered authors/_form.html.erb (10.4ms)
+  Rendered authors/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 245ms (Views: 232.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 14:16:35 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered books/_form.html.erb (6.1ms)
+  Rendered books/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 89ms (Views: 86.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors" for ::1 at 2016-07-07 14:16:36 -0500
+Processing by AuthorsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAuthor Load (0.5ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 93ms (Views: 90.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authors/3" for ::1 at 2016-07-07 14:16:45 -0500
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered authors/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 58ms (Views: 49.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-07-07 14:31:43 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mBook Load (0.7ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 173ms (Views: 159.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books/10" for ::1 at 2016-07-07 14:31:47 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mBook Load (0.6ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered books/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 57ms (Views: 51.3ms | ActiveRecord: 0.8ms)
