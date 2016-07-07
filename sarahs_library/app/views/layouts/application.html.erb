@@ -12,7 +12,22 @@
 <body>
   <header>
         <h1><%=link_to 'The Iron Library', root_path %> </h1>
+        <h4><%=link_to 'Add A Book', new_book_path%> || <%=link_to 'Add An Author', new_author_path%> || <%=link_to 'View All Authors', authors_path%></h4>
+
   </header>
+
+  <% if notice %>
+    <div class="alert alert-info" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="alert alert-danger" role="alert">
+      <%= alert %>
+    </div>
+  <% end %>
+
 
 <div class="container">
   <%= yield %>
