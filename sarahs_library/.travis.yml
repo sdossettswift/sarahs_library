@@ -7,6 +7,9 @@ before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - cp config/database.yml.travis config/database.yml
 deploy:
+    run:
+    - "rake db:migrate"
+    - "rake cleanup"
   provider: heroku
   api_key:
     secure: VYwJ9j/A6J27Nnh5zISHKCR8hOcJSWaZjsEwyrodhJxOi4J86WtGAY14MjEn7n4gRtwspNxWPI5w8tSEieomhf794eC2gOjjgD5sJ0OL5/Ge4Zrhs0cdJ5fh0YDx1sx5BNnKmGTKq+ogJDCibsE2QUhF/EXKPY4wdN9iRIhXQ5II9CGsskj43XrCGPSYy7NVITfo7dHGhNasneYo8fsB4ntJpipb0d8Pz8XcPzToD2mtsqA8UFIAEbSzMvkgNiF5t9IrFjlHLi1Y/3WjIjjSJLtUW9a+fnuKlsdFAr7+6FAOrcQ7dV4ei+FfGvxBy3GrGrqNRAMisCyXZLu50y6tB964rdAuT6PL18pYiBUnite7vpeeiUAmn8aUXTS0oZrQrs1objaS6PRFSE648Yg1IpEk5Hb8UnoaOMbDYkRkXkrCf9n9ILeDU+CR6QvV1DA8+ylouQIqTxhonOA/XTHkJU47NNwpjRzEIiD3rx9J45qGdTMod0APTSWJ4q+1KJLrTDXhSv2xi2PJroXjJAggKwME5Xkx2LADQfBhPCg433E3ChYIXUWjWOX49VmRD8HdtqHzRRDIPSyPQICf1J95vMXO+dZAjU0J64h/k2dvVM65Xm53Oa5kGk2ZEyM7xOxvpsFRnuRF/lxTjsYj3oZi/QbT5ckTgUV22PRDIxOSSn4=

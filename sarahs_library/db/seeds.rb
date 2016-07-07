@@ -1,4 +1,5 @@
 
+sarah = User.create! username: "sarah", password: "12345678"
 ###BOOKS########
 Book.create! title:'The Sun Also Rises', author: 'Ernest Hemingway', price: 14.50, photo_url:'https://upload.wikimedia.org/wikipedia/en/9/93/Hemingwaysun1.jpg'
 Book.create! title:'A Farewell to Arms', author: 'Ernest Hemingway', price: 16.25, photo_url:'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.bouf.com%2Fassets%2FProduct-66671-1.org.jpg&f=1'
