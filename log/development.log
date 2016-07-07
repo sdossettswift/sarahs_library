@@ -140,3 +140,170 @@ LoadError (cannot load such file -- /Users/sds/Desktop/sarahs_library/sarahs_lib
   Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
   Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (124.2ms)
   Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (166.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Sun Also Rises"], ["author", "Ernest Hemingway"], ["price", 14.5], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/9/93/Hemingwaysun1.jpg"], ["created_at", "2016-07-07 19:52:57.712118"], ["updated_at", "2016-07-07 19:52:57.712118"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "A Farewell to Arms"], ["author", "Ernest Hemingway"], ["price", 16.25], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.bouf.com%2Fassets%2FProduct-66671-1.org.jpg&f=1"], ["created_at", "2016-07-07 19:52:57.720807"], ["updated_at", "2016-07-07 19:52:57.720807"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Old Man and the Sea"], ["author", "Ernest Hemingway"], ["price", 15.0], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/7/73/Oldmansea.jpg"], ["created_at", "2016-07-07 19:52:57.726717"], ["updated_at", "2016-07-07 19:52:57.726717"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Big Magic"], ["author", "Elizabeth Gilbert"], ["price", 18.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.vogue.com%2Fwp-content%2Fuploads%2F2015%2F09%2F21%2F01-big-magic-book-review.jpg&f=1"], ["created_at", "2016-07-07 19:52:57.732284"], ["updated_at", "2016-07-07 19:52:57.732284"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "I and Thou"], ["author", "Martin Buber"], ["price", 8.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fimg2.imagesbn.com%2Fp%2F9781578989973_p0_v1_s260x420.JPG&f=1"], ["created_at", "2016-07-07 19:52:57.736901"], ["updated_at", "2016-07-07 19:52:57.736901"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Southerners Handbook: A Guide to the Good Life"], ["author", "Editors of Garden & Gun"], ["price", 25.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fimg2.imagesbn.com%2Fp%2F9780062242389_p0_v5_s260x420.JPG&f=1"], ["created_at", "2016-07-07 19:52:57.741696"], ["updated_at", "2016-07-07 19:52:57.741696"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Southerners Cookbook"], ["author", "Editors of Garden & Gun"], ["price", 27.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.thesouthernc.com%2Fwp-content%2Fuploads%2F2015%2F10%2FScreen-Shot-2015-10-25-at-10.59.21-AM-300x327.png&f=1"], ["created_at", "2016-07-07 19:52:57.746388"], ["updated_at", "2016-07-07 19:52:57.746388"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Sound and the Fury"], ["author", "William Faulkner"], ["price", 12.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/81-4fXFpZ8L.jpg"], ["created_at", "2016-07-07 19:52:57.751379"], ["updated_at", "2016-07-07 19:52:57.751379"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "As I Lay Dying"], ["author", "William Faulkner"], ["price", 13.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/91B2XZKrFcL.jpg"], ["created_at", "2016-07-07 19:52:57.756421"], ["updated_at", "2016-07-07 19:52:57.756421"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Light in August"], ["author", "William Faulkner"], ["price", 14.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/51CvkLzqUbL.jpg"], ["created_at", "2016-07-07 19:52:57.761315"], ["updated_at", "2016-07-07 19:52:57.761315"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Infinite Jest"], ["author", "David Foster Wallace"], ["price", 16.5], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/412xPN7BBkL.jpg"], ["created_at", "2016-07-07 19:52:57.765793"], ["updated_at", "2016-07-07 19:52:57.765793"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Consider the Lobster"], ["author", "David Foster Wallace"], ["price", 22.5], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/41LuDLgf0lL._SX331_BO1,204,203,200_.jpg"], ["created_at", "2016-07-07 19:52:57.770592"], ["updated_at", "2016-07-07 19:52:57.770592"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Not that Kind of Girl"], ["author", "Lena Dunham"], ["price", 17.5], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/5180DT8QFkL.jpg"], ["created_at", "2016-07-07 19:52:57.775044"], ["updated_at", "2016-07-07 19:52:57.775044"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Girl with the Lower Back Tattoo"], ["author", "Amy Schumer"], ["price", 27.5], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/81vhpVDxTRL.jpg"], ["created_at", "2016-07-07 19:52:57.779289"], ["updated_at", "2016-07-07 19:52:57.779289"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Americanah"], ["author", "Chimamanda Ngozi Adichie"], ["price", 13.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/51L3ktA41ZL.jpg"], ["created_at", "2016-07-07 19:52:57.783360"], ["updated_at", "2016-07-07 19:52:57.783360"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "We Should All Be Feminists"], ["author", "Chimamanda Ngozi Adichie"], ["price", 18.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/51Pueh2cUUL.jpg"], ["created_at", "2016-07-07 19:52:57.787511"], ["updated_at", "2016-07-07 19:52:57.787511"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Ernest"], ["last_name", "Hemingway"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/ErnestHemingway.jpg/220px-ErnestHemingway.jpg"], ["bio", "Ernest Miller Hemingway (July 21, 1899 – July 2, 1961) was an American novelist, short story writer, and journalist. His economical and understated style had a strong influence on 20th-century fiction, while his life of adventure and his public image influenced later generations. Hemingway produced most of his work between the mid-1920s and the mid-1950s, and won the Nobel Prize in Literature in 1954. He published seven novels, six short story collections, and two non-fiction works. Additional works, including three novels, four short story collections, and three non-fiction works, were published posthumously. Many of his works are considered classics of American literature."], ["created_at", "2016-07-07 19:52:57.797283"], ["updated_at", "2016-07-07 19:52:57.797283"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Elizabeth"], ["last_name", "Gilbert"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Elizabeth_Gilbert_at_TED.jpg/220px-Elizabeth_Gilbert_at_TED.jpg"], ["bio", "Elizabeth M. Gilbert (born July 18, 1969) is an American author, essayist, short story writer, biographer, novelist, and memoirist. She is best known for her 2006 memoir, Eat, Pray, Love, which as of December 2010 has spent 199 weeks on the New York Times Best Seller list, and was also made into a film by the same name in 2010."], ["created_at", "2016-07-07 19:52:57.802147"], ["updated_at", "2016-07-07 19:52:57.802147"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Martin"], ["last_name", "Buber"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Martin_Buber_portrait.jpg/220px-Martin_Buber_portrait.jpg"], ["bio", "Martin Buber (Hebrew: מרטין בובר‎‎, German: Martin Buber, Yiddish: מארטין בובער‎; February 8, 1878 – June 13, 1965) was an Austrian-born Israeli Jewish philosopher best known for his philosophy of dialogue, a form of existentialism centered on the distinction between the I–Thou relationship and the I–It relationship. Born in Vienna, Buber came from a family of observant Jews, but broke with Jewish custom to pursue secular studies in philosophy. In 1902, he became the editor of the weekly Die Welt, the central organ of the Zionist movement, although he later withdrew from organizational work in Zionism. In 1923, Buber wrote his famous essay on existence, Ich und Du (later translated into English as I and Thou), and in 1925, he began translating the Hebrew Bible into the German language.\n\nIn 1930, Buber became an honorary professor at the University of Frankfurt am Main, but resigned from his professorship in protest immediately after Adolf Hitler came to power in 1933. He then founded the Central Office for Jewish Adult Education, which became an increasingly important body as the German government forbade Jews to attend public education. In 1938, Buber left Germany and settled in Jerusalem, Mandate Palestine, receiving a professorship at Hebrew University and lecturing in anthropology and introductory sociology."], ["created_at", "2016-07-07 19:52:57.807048"], ["updated_at", "2016-07-07 19:52:57.807048"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Mircea"], ["last_name", "Eliade"], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/8/8c/Mircea.eliade.jpg"], ["bio", "Mircea Eliade (Romanian: [ˈmirt͡ʃe̯a eliˈade]; March 9 [O.S. February 24] 1907 – April 22, 1986) was a Romanian historian of religion, fiction writer, philosopher, and professor at the University of Chicago. He was a leading interpreter of religious experience, who established paradigms in religious studies that persist to this day. His theory that hierophanies form the basis of religion, splitting the human experience of reality into sacred and profane space and time, has proved influential.[1] One of his most influential contributions to religious studies was his theory of Eternal Return, which holds that myths and rituals do not simply commemorate hierophanies, but, at least to the minds of the religious, actually participate in them."], ["created_at", "2016-07-07 19:52:57.811768"], ["updated_at", "2016-07-07 19:52:57.811768"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "William"], ["last_name", "Faulkner"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Carl_Van_Vechten_-_William_Faulkner.jpg/220px-Carl_Van_Vechten_-_William_Faulkner.jpg"], ["bio", "William Cuthbert Faulkner (/ˈfɔːlknər/, September 25, 1897 – July 6, 1962) was an American writer and Nobel Prize laureate from Oxford, Mississippi. Faulkner wrote novels, short stories, a play, poetry, essays, and screenplays. He is primarily known for his novels and short stories set in the fictional Yoknapatawpha County, based on Lafayette County, Mississippi, where he spent most of his life."], ["created_at", "2016-07-07 19:52:57.816836"], ["updated_at", "2016-07-07 19:52:57.816836"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "David Foster"], ["last_name", "Wallace"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/4/43/David_Foster_Wallace_headshot_2006.jpg"], ["bio", "David Foster Wallace (February 21, 1962 – September 12, 2008) was an American novelist, short story writer, and essayist, as well as a professor of English and creative writing. His 1996 novel, Infinite Jest, was cited by Time magazine as one of the 100 best English-language novels from 1923 to 2005. His last, unfinished novel, The Pale King, was published in 2011 and was a finalist for the 2012 Pulitzer Prize for Fiction. A biography of Wallace was published in September 2012, and an extensive critical literature on his work has developed in the past decade."], ["created_at", "2016-07-07 19:52:57.821534"], ["updated_at", "2016-07-07 19:52:57.821534"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Lena"], ["last_name", "Dunham"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Lena_Dunham_TFF_2012_Shankbone_3.JPG/220px-Lena_Dunham_TFF_2012_Shankbone_3.JPG"], ["bio", "Lena Dunham (born May 13, 1986) is an American actress, writer, producer, and director. She is best known as the creator, writer and star of the HBO series Girls (2012–present), for which she has received numerous Emmy award nominations and two Golden Globe awards.Her work on Girls also led her to become the first woman to win the Directors Guild of America Award for Outstanding Directing – Comedy Series in 2013. That year Dunham was included in the Time 100 list of the most influential people in the world. In 2014, Dunham released her first book, Not That Kind of Girl: A Young Woman Tells You What Shes Learned."], ["created_at", "2016-07-07 19:52:57.826080"], ["updated_at", "2016-07-07 19:52:57.826080"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Amy"], ["last_name", "Schumer"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Amy_Schumer_by_Mario_Santor.jpg/220px-Amy_Schumer_by_Mario_Santor.jpg"], ["bio", "Amy Beth Schumer (born June 1, 1981) is an American stand-up comedian, writer, actress, and producer. She is the creator, co-producer, co-writer and star of the sketch comedy series Inside Amy Schumer, which debuted on Comedy Central in 2013 and has received a Peabody Award. Schumer has been nominated for five Primetime Emmy Awards for her work on the series, winning for Outstanding Variety Sketch Series in 2015. That year, she also wrote and starred in the comedy film Trainwreck, receiving nominations for the Writers Guild of America Award for Best Original Screenplay and the Golden Globe Award for Best Actress – Motion Picture Comedy or Musical."], ["created_at", "2016-07-07 19:52:57.831609"], ["updated_at", "2016-07-07 19:52:57.831609"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Chimamanda"], ["last_name", "Ngozi Adichie"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Adichie_chimamanda_download_2.JPG/220px-Adichie_chimamanda_download_2.JPG"], ["bio", "Chimamanda Ngozi Adichie (/ˌtʃɪmɑːmɑːndə əŋɡoʊzi ʌdiːtʃeɪ/;[note 1] born 15 September 1977) is a Nigerian novelist, nonfiction writer and short story writer. A MacArthur Genius Grant recipient, Adichie has been called the most prominent of a procession of critically acclaimed young anglophone authors [that] is succeeding in attracting a new generation of readers to African literature"], ["created_at", "2016-07-07 19:52:57.836658"], ["updated_at", "2016-07-07 19:52:57.836658"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "The Editors of"], ["last_name", "Garden & Gun"], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Garden_%26_Gun_logo.png/300px-Garden_%26_Gun_logo.png"], ["bio", "Garden & Gun is based in Charleston, South Carolina and covers an adventure-bound, art-loving, skeet-shooting lifestyle, as well as gardens, Southern tradition and land conservation. The name Garden & Gun is an inside reference to a popular 70s Charleston disco called the Garden and Gun Club. According to Rebecca Darwin, President and CEO of Garden & Gun, the title is a metaphor for the South—its land, the people, their lifestyle, and their heritage."], ["created_at", "2016-07-07 19:52:57.840819"], ["updated_at", "2016-07-07 19:52:57.840819"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2016-07-07 14:54:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 2714ms (Views: 2700.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 14:54:26 -0500
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (24.7ms)
+  Rendered books/new.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 75ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-07-07 14:54:27 -0500
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (14.2ms)
+  Rendered authors/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 56ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors" for ::1 at 2016-07-07 14:54:28 -0500
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 14:54:29 -0500
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (4.1ms)
+  Rendered books/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 14:54:31 -0500
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (4.1ms)
+  Rendered books/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 58ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/signin" for ::1 at 2016-07-07 14:54:38 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"signin"}
+  [1m[35mBook Load (0.3ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 0]]
+  Rendered books/show.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <div class="page-header">
+    2:   <h1><%= @book.title %></h1>
+    3: </div>
+    4: 
+    5: <p>Author: <%= @book.author %></p>
+  app/views/books/show.html.erb:2:in `_app_views_books_show_html_erb__3690596861346985032_70231260539180'
+
+
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.0ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.3ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (143.7ms)
+
+
+Started GET "/" for ::1 at 2016-07-07 14:54:43 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/2" for ::1 at 2016-07-07 14:54:46 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered books/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 65ms (Views: 63.2ms | ActiveRecord: 0.2ms)

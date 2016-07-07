@@ -46,3 +46,43 @@ Processing by BooksController#index as HTML
   Rendered books/index.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms)
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------
+AddANewBookTest: test_Add_A_Book
+--------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:51:58 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 582ms (Views: 561.0ms | ActiveRecord: 0.5ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:51:58 -0500
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (63.6ms)
+  Rendered books/new.html.erb within layouts/application (73.1ms)
+Completed 200 OK in 85ms (Views: 79.3ms | ActiveRecord: 0.2ms)
+Started POST "/books" for 127.0.0.1 at 2016-07-07 14:51:58 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "book"=>{"title"=>"Eat, Pray, Love", "author"=>"Elizabeth Gilbert", "price"=>"14", "photo_url"=>"https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.buzztab.com%2Fwp-content%2Fuploads%2F2010%2F05%2FEat-Pray-Love.jpg&f=1"}, "commit"=>"Create Book"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Eat, Pray, Love"], ["author", "Elizabeth Gilbert"], ["price", 14.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.buzztab.com%2Fwp-content%2Fuploads%2F2010%2F05%2FEat-Pray-Love.jpg&f=1"], ["created_at", "2016-07-07 19:51:58.732540"], ["updated_at", "2016-07-07 19:51:58.732540"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:51:58 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."title" = ? LIMIT 1  [["title", "Eat, Pray, Love"]]
+  [1m[36m (2.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------
+AddANewBookTest: test_Sanity_Check
+----------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:51:58 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
