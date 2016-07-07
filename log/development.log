@@ -252,3 +252,516 @@ NameError (uninitialized constant ApplicationController::User):
   Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
   Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (168.2ms)
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBooks (20160706194909)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "price" decimal, "author" varchar, "photo_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160706194909"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Migrating to CreateAuthors (20160707020048)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "photo_url" varchar, "bio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160707020048"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Migrating to CreateUsers (20160707045556)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160707045556"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Migrating to ChangePasswordToPasswordDigest (20160707050302)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "users"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160707050302"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "sarah"], ["password_digest", "$2a$10$uUC3a.eHd2nsk/uHYvBZzuG/g.wESK4bjXcCRo.yPso.DEu5m5Nem"], ["created_at", "2016-07-07 18:48:29.509584"], ["updated_at", "2016-07-07 18:48:29.509584"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Sun Also Rises"], ["author", "Ernest Hemingway"], ["price", 14.5], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/9/93/Hemingwaysun1.jpg"], ["created_at", "2016-07-07 18:48:29.529758"], ["updated_at", "2016-07-07 18:48:29.529758"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "A Farewell to Arms"], ["author", "Ernest Hemingway"], ["price", 16.25], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.bouf.com%2Fassets%2FProduct-66671-1.org.jpg&f=1"], ["created_at", "2016-07-07 18:48:29.534423"], ["updated_at", "2016-07-07 18:48:29.534423"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Old Man and the Sea"], ["author", "Ernest Hemingway"], ["price", 15.0], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/7/73/Oldmansea.jpg"], ["created_at", "2016-07-07 18:48:29.538961"], ["updated_at", "2016-07-07 18:48:29.538961"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Big Magic"], ["author", "Elizabeth Gilbert"], ["price", 18.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.vogue.com%2Fwp-content%2Fuploads%2F2015%2F09%2F21%2F01-big-magic-book-review.jpg&f=1"], ["created_at", "2016-07-07 18:48:29.543796"], ["updated_at", "2016-07-07 18:48:29.543796"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "I and Thou"], ["author", "Martin Buber"], ["price", 8.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fimg2.imagesbn.com%2Fp%2F9781578989973_p0_v1_s260x420.JPG&f=1"], ["created_at", "2016-07-07 18:48:29.550720"], ["updated_at", "2016-07-07 18:48:29.550720"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Southerners Handbook: A Guide to the Good Life"], ["author", "Editors of Garden & Gun"], ["price", 25.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fimg2.imagesbn.com%2Fp%2F9780062242389_p0_v5_s260x420.JPG&f=1"], ["created_at", "2016-07-07 18:48:29.555195"], ["updated_at", "2016-07-07 18:48:29.555195"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Southerners Cookbook"], ["author", "Editors of Garden & Gun"], ["price", 27.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.thesouthernc.com%2Fwp-content%2Fuploads%2F2015%2F10%2FScreen-Shot-2015-10-25-at-10.59.21-AM-300x327.png&f=1"], ["created_at", "2016-07-07 18:48:29.559799"], ["updated_at", "2016-07-07 18:48:29.559799"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Sound and the Fury"], ["author", "William Faulkner"], ["price", 12.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/81-4fXFpZ8L.jpg"], ["created_at", "2016-07-07 18:48:29.564602"], ["updated_at", "2016-07-07 18:48:29.564602"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "As I Lay Dying"], ["author", "William Faulkner"], ["price", 13.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/91B2XZKrFcL.jpg"], ["created_at", "2016-07-07 18:48:29.575896"], ["updated_at", "2016-07-07 18:48:29.575896"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Light in August"], ["author", "William Faulkner"], ["price", 14.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/51CvkLzqUbL.jpg"], ["created_at", "2016-07-07 18:48:29.580632"], ["updated_at", "2016-07-07 18:48:29.580632"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Infinite Jest"], ["author", "David Foster Wallace"], ["price", 16.5], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/412xPN7BBkL.jpg"], ["created_at", "2016-07-07 18:48:29.584918"], ["updated_at", "2016-07-07 18:48:29.584918"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Consider the Lobster"], ["author", "David Foster Wallace"], ["price", 22.5], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/41LuDLgf0lL._SX331_BO1,204,203,200_.jpg"], ["created_at", "2016-07-07 18:48:29.589290"], ["updated_at", "2016-07-07 18:48:29.589290"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Not that Kind of Girl"], ["author", "Lena Dunham"], ["price", 17.5], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/5180DT8QFkL.jpg"], ["created_at", "2016-07-07 18:48:29.595248"], ["updated_at", "2016-07-07 18:48:29.595248"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "The Girl with the Lower Back Tattoo"], ["author", "Amy Schumer"], ["price", 27.5], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/81vhpVDxTRL.jpg"], ["created_at", "2016-07-07 18:48:29.600753"], ["updated_at", "2016-07-07 18:48:29.600753"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Americanah"], ["author", "Chimamanda Ngozi Adichie"], ["price", 13.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/51L3ktA41ZL.jpg"], ["created_at", "2016-07-07 18:48:29.604987"], ["updated_at", "2016-07-07 18:48:29.604987"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "We Should All Be Feminists"], ["author", "Chimamanda Ngozi Adichie"], ["price", 18.0], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/51Pueh2cUUL.jpg"], ["created_at", "2016-07-07 18:48:29.609825"], ["updated_at", "2016-07-07 18:48:29.609825"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Ernest"], ["last_name", "Hemingway"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/ErnestHemingway.jpg/220px-ErnestHemingway.jpg"], ["bio", "Ernest Miller Hemingway (July 21, 1899 – July 2, 1961) was an American novelist, short story writer, and journalist. His economical and understated style had a strong influence on 20th-century fiction, while his life of adventure and his public image influenced later generations. Hemingway produced most of his work between the mid-1920s and the mid-1950s, and won the Nobel Prize in Literature in 1954. He published seven novels, six short story collections, and two non-fiction works. Additional works, including three novels, four short story collections, and three non-fiction works, were published posthumously. Many of his works are considered classics of American literature."], ["created_at", "2016-07-07 18:48:29.624403"], ["updated_at", "2016-07-07 18:48:29.624403"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Elizabeth"], ["last_name", "Gilbert"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Elizabeth_Gilbert_at_TED.jpg/220px-Elizabeth_Gilbert_at_TED.jpg"], ["bio", "Elizabeth M. Gilbert (born July 18, 1969) is an American author, essayist, short story writer, biographer, novelist, and memoirist. She is best known for her 2006 memoir, Eat, Pray, Love, which as of December 2010 has spent 199 weeks on the New York Times Best Seller list, and was also made into a film by the same name in 2010."], ["created_at", "2016-07-07 18:48:29.629872"], ["updated_at", "2016-07-07 18:48:29.629872"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Martin"], ["last_name", "Buber"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Martin_Buber_portrait.jpg/220px-Martin_Buber_portrait.jpg"], ["bio", "Martin Buber (Hebrew: מרטין בובר‎‎, German: Martin Buber, Yiddish: מארטין בובער‎; February 8, 1878 – June 13, 1965) was an Austrian-born Israeli Jewish philosopher best known for his philosophy of dialogue, a form of existentialism centered on the distinction between the I–Thou relationship and the I–It relationship. Born in Vienna, Buber came from a family of observant Jews, but broke with Jewish custom to pursue secular studies in philosophy. In 1902, he became the editor of the weekly Die Welt, the central organ of the Zionist movement, although he later withdrew from organizational work in Zionism. In 1923, Buber wrote his famous essay on existence, Ich und Du (later translated into English as I and Thou), and in 1925, he began translating the Hebrew Bible into the German language.\n\nIn 1930, Buber became an honorary professor at the University of Frankfurt am Main, but resigned from his professorship in protest immediately after Adolf Hitler came to power in 1933. He then founded the Central Office for Jewish Adult Education, which became an increasingly important body as the German government forbade Jews to attend public education. In 1938, Buber left Germany and settled in Jerusalem, Mandate Palestine, receiving a professorship at Hebrew University and lecturing in anthropology and introductory sociology."], ["created_at", "2016-07-07 18:48:29.634394"], ["updated_at", "2016-07-07 18:48:29.634394"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Mircea"], ["last_name", "Eliade"], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/8/8c/Mircea.eliade.jpg"], ["bio", "Mircea Eliade (Romanian: [ˈmirt͡ʃe̯a eliˈade]; March 9 [O.S. February 24] 1907 – April 22, 1986) was a Romanian historian of religion, fiction writer, philosopher, and professor at the University of Chicago. He was a leading interpreter of religious experience, who established paradigms in religious studies that persist to this day. His theory that hierophanies form the basis of religion, splitting the human experience of reality into sacred and profane space and time, has proved influential.[1] One of his most influential contributions to religious studies was his theory of Eternal Return, which holds that myths and rituals do not simply commemorate hierophanies, but, at least to the minds of the religious, actually participate in them."], ["created_at", "2016-07-07 18:48:29.638608"], ["updated_at", "2016-07-07 18:48:29.638608"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "William"], ["last_name", "Faulkner"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Carl_Van_Vechten_-_William_Faulkner.jpg/220px-Carl_Van_Vechten_-_William_Faulkner.jpg"], ["bio", "William Cuthbert Faulkner (/ˈfɔːlknər/, September 25, 1897 – July 6, 1962) was an American writer and Nobel Prize laureate from Oxford, Mississippi. Faulkner wrote novels, short stories, a play, poetry, essays, and screenplays. He is primarily known for his novels and short stories set in the fictional Yoknapatawpha County, based on Lafayette County, Mississippi, where he spent most of his life."], ["created_at", "2016-07-07 18:48:29.642965"], ["updated_at", "2016-07-07 18:48:29.642965"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "David Foster"], ["last_name", "Wallace"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/4/43/David_Foster_Wallace_headshot_2006.jpg"], ["bio", "David Foster Wallace (February 21, 1962 – September 12, 2008) was an American novelist, short story writer, and essayist, as well as a professor of English and creative writing. His 1996 novel, Infinite Jest, was cited by Time magazine as one of the 100 best English-language novels from 1923 to 2005. His last, unfinished novel, The Pale King, was published in 2011 and was a finalist for the 2012 Pulitzer Prize for Fiction. A biography of Wallace was published in September 2012, and an extensive critical literature on his work has developed in the past decade."], ["created_at", "2016-07-07 18:48:29.647301"], ["updated_at", "2016-07-07 18:48:29.647301"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Lena"], ["last_name", "Dunham"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Lena_Dunham_TFF_2012_Shankbone_3.JPG/220px-Lena_Dunham_TFF_2012_Shankbone_3.JPG"], ["bio", "Lena Dunham (born May 13, 1986) is an American actress, writer, producer, and director. She is best known as the creator, writer and star of the HBO series Girls (2012–present), for which she has received numerous Emmy award nominations and two Golden Globe awards.Her work on Girls also led her to become the first woman to win the Directors Guild of America Award for Outstanding Directing – Comedy Series in 2013. That year Dunham was included in the Time 100 list of the most influential people in the world. In 2014, Dunham released her first book, Not That Kind of Girl: A Young Woman Tells You What Shes Learned."], ["created_at", "2016-07-07 18:48:29.651463"], ["updated_at", "2016-07-07 18:48:29.651463"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Amy"], ["last_name", "Schumer"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Amy_Schumer_by_Mario_Santor.jpg/220px-Amy_Schumer_by_Mario_Santor.jpg"], ["bio", "Amy Beth Schumer (born June 1, 1981) is an American stand-up comedian, writer, actress, and producer. She is the creator, co-producer, co-writer and star of the sketch comedy series Inside Amy Schumer, which debuted on Comedy Central in 2013 and has received a Peabody Award. Schumer has been nominated for five Primetime Emmy Awards for her work on the series, winning for Outstanding Variety Sketch Series in 2015. That year, she also wrote and starred in the comedy film Trainwreck, receiving nominations for the Writers Guild of America Award for Best Original Screenplay and the Golden Globe Award for Best Actress – Motion Picture Comedy or Musical."], ["created_at", "2016-07-07 18:48:29.656025"], ["updated_at", "2016-07-07 18:48:29.656025"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Chimamanda"], ["last_name", "Ngozi Adichie"], ["photo_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Adichie_chimamanda_download_2.JPG/220px-Adichie_chimamanda_download_2.JPG"], ["bio", "Chimamanda Ngozi Adichie (/ˌtʃɪmɑːmɑːndə əŋɡoʊzi ʌdiːtʃeɪ/;[note 1] born 15 September 1977) is a Nigerian novelist, nonfiction writer and short story writer. A MacArthur Genius Grant recipient, Adichie has been called the most prominent of a procession of critically acclaimed young anglophone authors [that] is succeeding in attracting a new generation of readers to African literature"], ["created_at", "2016-07-07 18:48:29.660881"], ["updated_at", "2016-07-07 18:48:29.660881"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "authors" ("first_name", "last_name", "photo_url", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "The Editors of"], ["last_name", "Garden & Gun"], ["photo_url", "https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Garden_%26_Gun_logo.png/300px-Garden_%26_Gun_logo.png"], ["bio", "Garden & Gun is based in Charleston, South Carolina and covers an adventure-bound, art-loving, skeet-shooting lifestyle, as well as gardens, Southern tradition and land conservation. The name Garden & Gun is an inside reference to a popular 70s Charleston disco called the Garden and Gun Club. According to Rebecca Darwin, President and CEO of Garden & Gun, the title is a metaphor for the South—its land, the people, their lifestyle, and their heritage."], ["created_at", "2016-07-07 18:48:29.666338"], ["updated_at", "2016-07-07 18:48:29.666338"]]
+  [1m[35m (5.2ms)[0m  commit transaction
+
+
+Started GET "/" for ::1 at 2016-07-07 13:48:35 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 3074ms (Views: 3042.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-7be0465ad162881920c3305f979b1ebae3178229ebe73074d495bdde9a1d9471.css?body=1" for ::1 at 2016-07-07 13:48:39 -0500
+
+
+Started GET "/" for ::1 at 2016-07-07 13:48:39 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 80ms (Views: 78.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-07-07 13:48:42 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 13:48:43 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (70.2ms)
+  Rendered books/new.html.erb within layouts/application (84.1ms)
+Completed 200 OK in 125ms (Views: 121.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-07-07 13:48:44 -0500
+Processing by AuthorsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/_form.html.erb (10.6ms)
+  Rendered authors/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 119ms (Views: 102.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/authors" for ::1 at 2016-07-07 13:48:46 -0500
+Processing by AuthorsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAuthor Load (0.6ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-07-07 13:48:47 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 80ms (Views: 77.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 13:48:50 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (3.1ms)
+  Rendered books/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-07-07 13:48:53 -0500
+Processing by AuthorsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/_form.html.erb (5.5ms)
+  Rendered authors/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 63ms (Views: 61.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors" for ::1 at 2016-07-07 13:48:54 -0500
+Processing by AuthorsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 75ms (Views: 73.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 13:48:56 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (6.7ms)
+  Rendered books/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 64ms (Views: 62.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-07-07 13:48:57 -0500
+Processing by AuthorsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/_form.html.erb (4.9ms)
+  Rendered authors/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 85ms (Views: 82.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors" for ::1 at 2016-07-07 13:48:57 -0500
+Processing by AuthorsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 94ms (Views: 92.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-07-07 13:48:58 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 75ms (Views: 72.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/2" for ::1 at 2016-07-07 13:49:00 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered books/show.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 77ms (Views: 73.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 13:49:03 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (7.0ms)
+  Rendered books/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 72ms (Views: 68.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/authors" for ::1 at 2016-07-07 13:49:09 -0500
+Processing by AuthorsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAuthor Load (0.9ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/register" for ::1 at 2016-07-07 13:49:14 -0500
+
+ActionController::RoutingError (No route matches [GET] "/register"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sds/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/sds/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/sds/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (118.1ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (85.9ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (194.2ms)
+
+
+Started GET "/registration" for ::1 at 2016-07-07 13:50:34 -0500
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/registration" for ::1 at 2016-07-07 13:50:45 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f7+auiS7Xr3m7fUFax9nqWBZFeO3caCiPPIan43z5jfuN3slI+c6A02fChoh9TN+QUecVA7+5iKStmTN7OZh+g==", "user"=>{"username"=>"sarah", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "sarah"], ["password_digest", "$2a$10$F1rQDcWKwbh.lmxbKlAOR.K304j/sAwA/aw6aZ7aVrxia.cWazNTa"], ["created_at", "2016-07-07 18:50:45.329739"], ["updated_at", "2016-07-07 18:50:45.329739"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 97ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-07 13:50:45 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 13:50:52 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered books/_form.html.erb (5.3ms)
+  Rendered books/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-07-07 13:50:53 -0500
+Processing by AuthorsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered authors/_form.html.erb (4.8ms)
+  Rendered authors/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 58ms (Views: 56.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for ::1 at 2016-07-07 13:50:54 -0500
+Processing by AuthorsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/register" for ::1 at 2016-07-07 13:51:32 -0500
+
+ActionController::RoutingError (No route matches [GET] "/register"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sds/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/sds/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/sds/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (89.9ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.8ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.8ms)
+
+
+Started GET "/register" for ::1 at 2016-07-07 13:51:39 -0500
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 48ms (Views: 36.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for ::1 at 2016-07-07 13:51:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/session/new"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sds/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/sds/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/sds/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (100.7ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.9ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/sds/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.4ms)
+
+
+Started GET "/" for ::1 at 2016-07-07 13:52:08 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 55ms (Views: 49.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 13:52:09 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered books/_form.html.erb (5.2ms)
+  Rendered books/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-07-07 13:52:10 -0500
+Processing by AuthorsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered authors/_form.html.erb (6.9ms)
+  Rendered authors/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 77ms (Views: 64.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/authors" for ::1 at 2016-07-07 13:52:11 -0500
+Processing by AuthorsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 13:52:14 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered books/_form.html.erb (7.0ms)
+  Rendered books/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 56ms (Views: 54.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-07-07 13:52:16 -0500
+Processing by AuthorsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered authors/_form.html.erb (3.8ms)
+  Rendered authors/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors" for ::1 at 2016-07-07 13:52:17 -0500
+Processing by AuthorsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/new" for ::1 at 2016-07-07 13:53:50 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered books/_form.html.erb (4.3ms)
+  Rendered books/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.3ms)

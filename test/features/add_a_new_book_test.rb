@@ -1,12 +1,6 @@
 require "test_helper"
 
 class AddANewBookTest < Capybara::Rails::TestCase
-  test "Sanity Check" do
-    visit root_path
-    assert_content page, "Sarah Recommends"
-    refute_content page, "Goodbye All!"
-  end
-
   test "Add A Book" do
     visit root_path
     click_link('Add A Book')

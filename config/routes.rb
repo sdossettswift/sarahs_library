@@ -21,9 +21,9 @@ Rails.application.routes.draw do
   post 'sign_in' => 'sessions#create'
   delete 'sign_in' => 'sessions#delete'
 
-  get 'registration' => 'users#new', as: :new_user
-  post 'registration' => 'users#create', as: :create_user
-  
+  get 'register' => 'users#new', as: :new_user
+  post 'register' => 'users#create', as: :create_user
+
 
   root 'books#index'
 end
