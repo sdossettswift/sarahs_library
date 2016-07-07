@@ -2,7 +2,14 @@ require "test_helper"
 
 class AddANewBookTest < Capybara::Rails::TestCase
   test "Add A Book" do
+    @user = User.create! username: "sarah", password: "12345678"
     visit root_path
+    fill_in "Username", with: "sarah"
+    fill_in "Password", with: "12345678"
+    click_button "Sign In"
+
+    visit root_path
+
     click_link('Add A Book')
     fill_in('Title', :with => 'Eat, Pray, Love')
     fill_in('Author', :with => 'Elizabeth Gilbert')
