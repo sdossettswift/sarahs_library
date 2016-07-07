@@ -1,3 +1,36 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'books';
+
+  html {
+  position: relative;
+  min-height: 100%;
+}
+
+  body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+header{
+  text-align: center;
+}
+  *{
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+
+  h1{
+     font-family: 'Parisienne', cursive;
+     text-align: center; 
+  }
+
+
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+  }

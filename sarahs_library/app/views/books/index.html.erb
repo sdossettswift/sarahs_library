@@ -1,12 +1,14 @@
 <h1>Sarah Recommends</h1>
-
+<div class="outer_wrapper">
 <%@books.each do |book|%>
+<div class="book_wrapper">
   <div class="book_box">
-    <%=link_to book.title, book_path(id: book.id)%><br/>
-    by <%=book.author %>
-    <div class="book_pic">
-      <%= image_tag book.photo_url %>
+      <%=link_to book.title, book_path(id: book.id)%><br/>
+      <div class="book_pic">
+        <%= image_tag book.photo_url %>
+      </div>
+          by <%=book.author %>
     </div>
-
   </div>
 <%end%>
+</div>

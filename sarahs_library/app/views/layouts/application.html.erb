@@ -5,13 +5,21 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <style>
+  @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Parisienne';
+  </style>
 </head>
 <body>
   <header>
-    <h1><%=link_to 'The Iron Library', root_path %> </h1>
+        <h1><%=link_to 'The Iron Library', root_path %> </h1>
   </header>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
+  <div class="footer">
+    c. 2016 Sarah Swift
+  </div>
 </body>
 </html>
