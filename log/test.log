@@ -46,11 +46,287 @@ Processing by BooksController#index as HTML
   Rendered books/index.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms)
   [1m[35m (0.1ms)[0m  rollback transaction
+<<<<<<< HEAD
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "photo_url" varchar, "bio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.5ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "price" decimal, "author" varchar, "photo_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar) [0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160707050302')
+  [1m[36m (3.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160706194909')[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160707020048')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160707045556')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------
+AddANewBookTest: test_Add_A_Book
+--------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 13:47:57 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007faf5c73e390@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 30ms (ActiveRecord: 0.3ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 13:47:57 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 551ms (Views: 550.4ms | ActiveRecord: 0.1ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 13:47:58 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007faf5c73e390@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 13:47:58 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------
+AddANewBookTest: test_Sanity_Check
+----------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 13:47:58 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007faf5c73e390@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 13:47:58 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "photo_url" varchar, "bio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.0ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "price" decimal, "author" varchar, "photo_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160707050302')
+  [1m[36m (3.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160706194909')[0m
+  [1m[35m (4.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160707020048')
+  [1m[36m (3.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160707045556')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.1ms)[0m  begin transaction
 --------------------------------
 AddANewBookTest: test_Add_A_Book
 --------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 13:53:22 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f8074e2f170@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 25ms (ActiveRecord: 0.4ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 13:53:22 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 316ms (Views: 313.2ms | ActiveRecord: 0.3ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 13:53:23 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f8074e2f170@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 13:53:23 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+--------------------------------
+AddANewBookTest: test_Add_A_Book
+--------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:00:43 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fbf11635a88@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 36ms (ActiveRecord: 2.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:00:43 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 835ms (Views: 833.4ms | ActiveRecord: 0.1ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:00:43 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fbf11635a88@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:00:43 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------
+AddANewBookTest: test_Add_A_Book
+--------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:38:26 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fad516b3338@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 33ms (ActiveRecord: 2.2ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:38:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 348ms (Views: 347.2ms | ActiveRecord: 0.1ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fad516b3338@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------------------------------------
+CanSignInTest: test_If_I_am_signed_in,_I_want_do_not_want_sign_in,_I_want_sign_out
+----------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fad516b3338@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------
+CanSignInTest: test_Can_sign_in
+-------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "sarah"], ["password_digest", "$2a$04$LsXT4Ed2y6mc1P8koS/.6u4QZj3N.ZsvVd3tCfKzyQ.Bap3M5ttl."], ["created_at", "2016-07-07 19:38:27.327700"], ["updated_at", "2016-07-07 19:38:27.327700"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fad516b3338@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.1ms)
+Started POST "/sign_in" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"sarah", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "sarah"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (2.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 2.4ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:38:27 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (58.5ms)
+  Rendered books/new.html.erb within layouts/application (68.7ms)
+Completed 200 OK in 84ms (Views: 73.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------------------------------------
+CanSignInTest: test_If_I_am_signed_in,_I_want_do_not_want_sign_in,_I_want_sign_out
+----------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f920168d298@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 0.2ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 324ms (Views: 322.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------
+CanSignInTest: test_Can_sign_in
+-------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "sarah"], ["password_digest", "$2a$04$n6CVGEfUmEot1Dz/95msA.IKMKZDx7wV2CZpcVwhLQFmE2GTS9q.W"], ["created_at", "2016-07-07 19:39:13.803676"], ["updated_at", "2016-07-07 19:39:13.803676"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f920168d298@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+Started POST "/sign_in" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"sarah", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "sarah"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 30ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (22.3ms)
+  Rendered books/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 39ms (Views: 32.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (4.8ms)[0m  [1mrollback transaction[0m
+>>>>>>> 8ccc57ec88679e906f2b6b236fe9d81a7b247de0
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------
+AddANewBookTest: test_Add_A_Book
+--------------------------------
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2016-07-07 14:51:58 -0500
 Processing by BooksController#index as HTML
   [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
@@ -86,3 +362,272 @@ Processing by BooksController#index as HTML
   Rendered books/index.html.erb within layouts/application (0.5ms)
 Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
   [1m[35m (0.1ms)[0m  rollback transaction
+=======
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f920168d298@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+Started POST "/sign_in" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"sarah", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "sarah"]]
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f920168d298@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f920168d298@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:39:13 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------
+AddANewBookTest: test_Add_A_Book
+--------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "sarah"], ["password_digest", "$2a$04$lritJoKBcqTjQT07JpGwE.jSLkpOcU82H7VXcFmuvYzy5YXSV3ydW"], ["created_at", "2016-07-07 19:40:33.156474"], ["updated_at", "2016-07-07 19:40:33.156474"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f9b3c01ab38@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 330ms (Views: 329.2ms | ActiveRecord: 0.1ms)
+Started POST "/sign_in" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"sarah", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "sarah"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (36.9ms)
+  Rendered books/new.html.erb within layouts/application (49.2ms)
+Completed 200 OK in 71ms (Views: 53.2ms | ActiveRecord: 0.3ms)
+Started POST "/books" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "book"=>{"title"=>"Eat, Pray, Love", "author"=>"Elizabeth Gilbert", "price"=>"14", "photo_url"=>"https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.buzztab.com%2Fwp-content%2Fuploads%2F2010%2F05%2FEat-Pray-Love.jpg&f=1"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Eat, Pray, Love"], ["author", "Elizabeth Gilbert"], ["price", 14.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.buzztab.com%2Fwp-content%2Fuploads%2F2010%2F05%2FEat-Pray-Love.jpg&f=1"], ["created_at", "2016-07-07 19:40:33.680379"], ["updated_at", "2016-07-07 19:40:33.680379"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 15ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+  [1m[36mBook Load (0.8ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."title" = ? LIMIT 1[0m  [["title", "Eat, Pray, Love"]]
+  [1m[35m (2.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------
+CanSignInTest: test_Can_sign_in
+-------------------------------
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "sarah"], ["password_digest", "$2a$04$jk54WTgvDJiWmxuihYyi9OSh8ot4063MFOgzCro1ojRqpEYX5UF8G"], ["created_at", "2016-07-07 19:40:33.718022"], ["updated_at", "2016-07-07 19:40:33.718022"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f9b3c01ab38@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+Started POST "/sign_in" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"sarah", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "sarah"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered books/_form.html.erb (1.9ms)
+  Rendered books/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (2.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------------------------
+CanSignInTest: test_If_I_am_signed_in,_I_want_do_not_want_sign_in,_I_want_sign_out
+----------------------------------------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007f9b3c01ab38@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:40:33 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------
+CanSignInTest: test_Can_sign_in
+-------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "sarah"], ["password_digest", "$2a$04$nDbVoB/.SVQkss8YN9SI8uGxYO5pHpEkD94upEQtZQGLCrrLVDji2"], ["created_at", "2016-07-07 19:41:20.956407"], ["updated_at", "2016-07-07 19:41:20.956407"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:41:20 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fe2a6afab50@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:41:20 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 310ms (Views: 308.5ms | ActiveRecord: 0.1ms)
+Started POST "/sign_in" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"sarah", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "sarah"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 25ms (Views: 19.6ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (32.5ms)
+  Rendered books/new.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 74ms (Views: 48.9ms | ActiveRecord: 0.3ms)
+  [1m[36m (2.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------
+AddANewBookTest: test_Add_A_Book
+--------------------------------
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "sarah"], ["password_digest", "$2a$04$rvbzy4nl9UJBgazqXfE5zO8BLUH2OE9jhkGsJtSpE8aKv27sP6n2i"], ["created_at", "2016-07-07 19:41:21.470375"], ["updated_at", "2016-07-07 19:41:21.470375"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://www.example.com/sign_in
+Filter chain halted as #<Proc:0x007fe2a6afab50@/Users/sds/Desktop/sarahs_library/app/controllers/books_controller.rb:3> rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.1ms)
+Started POST "/sign_in" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"sarah", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "sarah"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+Started GET "/books/new" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (3.2ms)
+  Rendered books/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms)
+Started POST "/books" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "book"=>{"title"=>"Eat, Pray, Love", "author"=>"Elizabeth Gilbert", "price"=>"14", "photo_url"=>"https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.buzztab.com%2Fwp-content%2Fuploads%2F2010%2F05%2FEat-Pray-Love.jpg&f=1"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "books" ("title", "author", "price", "photo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Eat, Pray, Love"], ["author", "Elizabeth Gilbert"], ["price", 14.0], ["photo_url", "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.buzztab.com%2Fwp-content%2Fuploads%2F2010%2F05%2FEat-Pray-Love.jpg&f=1"], ["created_at", "2016-07-07 19:41:21.527689"], ["updated_at", "2016-07-07 19:41:21.527689"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2016-07-07 14:41:21 -0500
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."title" = ? LIMIT 1[0m  [["title", "Eat, Pray, Love"]]
+  [1m[35m (2.2ms)[0m  rollback transaction
+>>>>>>> 8ccc57ec88679e906f2b6b236fe9d81a7b247de0
