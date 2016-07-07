@@ -1,7 +1,12 @@
 <h1>Sarah Recommends</h1>
 
 <%@books.each do |book|%>
-  <%=link_to book.title, book_path(id: book.id)%>
-  <%=book.author %>
-  <%= image_tag book.photo_url %>
+  <div class="book_box">
+    <%=link_to book.title, book_path(id: book.id)%><br/>
+    by <%=book.author %>
+    <div class="book_pic">
+      <%= image_tag book.photo_url %>
+    </div>
+
+  </div>
 <%end%>

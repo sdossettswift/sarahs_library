@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+###BOOKS########
+Book.create! title:'The Sun Also Rises', author: 'Ernest Hemingway', price: 14.50, photo_url:'https://upload.wikimedia.org/wikipedia/en/9/93/Hemingwaysun1.jpg'
+Book.create! title:'A Farewell to Arms', author: 'Ernest Hemingway', price: 16.25, photo_url:'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.bouf.com%2Fassets%2FProduct-66671-1.org.jpg&f=1'
+Book.create! title:'The Old Man and the Sea', author: 'Ernest Hemingway', price: 15, photo_url:'https://upload.wikimedia.org/wikipedia/en/7/73/Oldmansea.jpg'
+Book.create! title:'Big Magic',author:'Elizabeth Gilbert', price: '18', photo_url:'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.vogue.com%2Fwp-content%2Fuploads%2F2015%2F09%2F21%2F01-big-magic-book-review.jpg&f=1'
+Book.create! title:'I and Thou',author:'Martin Buber', price: '8', photo_url:'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fimg2.imagesbn.com%2Fp%2F9781578989973_p0_v1_s260x420.JPG&f=1'
+Book.create! title:'The Southerners Handbook: A Guide to the Good Life', author:'Editors of Garden & Gun', price: 25, photo_url:'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fimg2.imagesbn.com%2Fp%2F9780062242389_p0_v5_s260x420.JPG&f=1'
+Book.create! title:'The Southerners Cookbook',author:'Editors of Garden & Gun', price: 27, photo_url:'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.thesouthernc.com%2Fwp-content%2Fuploads%2F2015%2F10%2FScreen-Shot-2015-10-25-at-10.59.21-AM-300x327.png&f=1'
+Book.create! title: 'The Sound and the Fury', author: 'William Faulkner', price:12 , photo_url:'https://images-na.ssl-images-amazon.com/images/I/81-4fXFpZ8L.jpg'
+Book.create! title: 'As I Lay Dying', author: 'William Faulkner', price:13 , photo_url:'https://images-na.ssl-images-amazon.com/images/I/91B2XZKrFcL.jpg'
+Book.create! title: 'Light in August', author: 'William Faulkner', price:14 , photo_url:'https://images-na.ssl-images-amazon.com/images/I/51CvkLzqUbL.jpg'
+Book.create! title: 'Infinite Jest', author: 'David Foster Wallace', price:16.50 , photo_url:'https://images-na.ssl-images-amazon.com/images/I/412xPN7BBkL.jpg'
+Book.create! title: 'Consider the Lobster', author: 'David Foster Wallace', price: 22.50 , photo_url:'https://images-na.ssl-images-amazon.com/images/I/41LuDLgf0lL._SX331_BO1,204,203,200_.jpg'
+Book.create! title: 'Not that Kind of Girl', author: 'Lena Dunham', price:17.50 , photo_url:'https://images-na.ssl-images-amazon.com/images/I/5180DT8QFkL.jpg'
+Book.create! title: 'The Girl with the Lower Back Tattoo', author: 'Amy Schumer', price:27.50, photo_url:'https://images-na.ssl-images-amazon.com/images/I/81vhpVDxTRL.jpg'
+Book.create! title: 'Americanah', author: 'Chimamanda Ngozi Adichie', price: 13, photo_url:'https://images-na.ssl-images-amazon.com/images/I/51L3ktA41ZL.jpg'
+Book.create! title: 'We Should All Be Feminists', author: 'Chimamanda Ngozi Adichie', price: 18, photo_url:'https://images-na.ssl-images-amazon.com/images/I/51Pueh2cUUL.jpg'
