@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'books#index'
+
 
   get 'books' => 'welcome#homepage', as: :books
   post 'books' => 'books#create'
@@ -16,4 +16,14 @@ Rails.application.routes.draw do
   get 'authors/:id/edit' => 'authors#edit', as: :edit_author
   delete 'authors/:id' => 'authors#delete'
   patch 'authors/:id' => 'authors#update'
+
+  get 'sign_in' => 'sessions#new', as: :sign_in
+  post 'sign_in' => 'sessions#create'
+  delete 'sign_in' => 'sessions#delete'
+
+  get 'register' => 'users#new', as: :new_user
+  post 'register' => 'users#create', as: :create_user
+
+
+  root 'books#index'
 end
