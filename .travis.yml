@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.3.1
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: mR1f9iUjrFaDOtRCTNnAQLslmUtTeGun/GH02OKnO6912lATi3ByV+dMMF9tTxmkejNdlGzfXwf+OmQiyCbH6XGKvCorPUyBwvbY9GoC+MkPKwP5Uv7oNzYjuhKX6IR27I1I+hiZv3ORc2pQMwRfCKKNLBdOtF0BIDQvSsQe8MR4JxGDBTlHhpBAa+w/S7BR9SLmwxmXg17BWVrpOTfWEm9OFIANfMs6EXE43W6/wQSn/BZVKVdcpcYkmhizGEJDVQkx5VfYYBCrwPaK/RiBWQUNJ1wFyhH5jFhuZYZtchImKjdng6hr1kPh/LaqKzM/GinO9D/9+8c51jgROqwVb/ihqnG4AWBC+rZLUnHh/cwgh6j2kQ+HZ+PUyt8K+jmR9PDifs15B82ddZ/uxFrLFJjRlfwOj4QsIyCJ6JlAe3d9Reh06LQrEBC9ViGaoX338wIZEnlKWdwTWjJLWuLLku4S00TyM0llFL3O8EC5vpeF4EYRsXDqSZV4AigJJ9qTQlSdchO/Y2iFNbIeH2/qjqzP4O+CBv4LhF9WaH4FIiiC08PuluJqZsdzWX09fpl8L1rePakCrmOMF/R+ONhUmBBmGsTXLDV59t8wk4T5TDA7wuzTrB1Z3CMrBeIvkSfCAmys8fxo6l6AWlBs4DZiSEJL4QmgKkQ8GSTbZl7A9kw=
+  app: sarahs_library
+  on:
+    repo: sdossettswift/sarahs_library
