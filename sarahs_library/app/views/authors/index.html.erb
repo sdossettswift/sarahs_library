@@ -1,0 +1,13 @@
+<h1>Featured Authors</h1>
+<div class="outer_wrapper">
+<% @authors.each do |author|%>
+<div class="author_wrapper">
+  <div class="author_box">
+      <%=link_to author.first_name, author_path(id: author.id)%> <%=link_to author.last_name, author_path(id: author.id)%><br/>
+      <div class="author_pic">
+        <%= image_tag author.photo_url %>
+      </div>
+    </div>
+  </div>
+<%end%>
+</div>

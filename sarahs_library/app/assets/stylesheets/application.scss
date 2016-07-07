@@ -1,6 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'books';
+@import 'authors'; 
 
   html {
   position: relative;
@@ -21,7 +22,7 @@ header{
 
   h1{
      font-family: 'Parisienne', cursive;
-     text-align: center; 
+     text-align: center;
   }
 
 

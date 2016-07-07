@@ -1,0 +1,10 @@
+<div class="page-header">
+  <h1><%= @author.first_name%> <%= @author.last_name%></h1>
+</div>
+
+<p> <%= @author.first_name %> <%= @author.last_name %></p>
+<%= image_tag @author.photo_url %>
+<p> <%=@author.bio %></p>
+
+<%= link_to "Update Author", edit_author_path(id: @author.id), class: 'btn btn-default' %>
+<%= link_to "Delete Author", author_path(id: @author.id), method: :delete, class: "btn btn-danger" %>

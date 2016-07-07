@@ -1,0 +1,26 @@
+.author_box{
+  width: 250px;
+  height: 400px;
+
+}
+img{
+  width: 200px;
+}
+ .outer_wrapper{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.author_box{
+  border: 1px solid #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  background: #f5f5f5;
+  font-size: larger;
+  text-align: center;
+}
